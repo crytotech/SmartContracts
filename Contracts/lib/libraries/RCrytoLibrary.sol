@@ -1,5 +1,6 @@
 pragma solidity >=0.5.0;
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/libraries/SafeMath.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IRCrytoPair.sol";
 
 
 library RCrytoLibrary {
