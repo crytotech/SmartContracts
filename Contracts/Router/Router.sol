@@ -10,9 +10,6 @@ import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/co
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/libraries/RCrytoLibrary.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IERC20.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IWETH.sol";
-
-
-
 // File: contracts\RCrytoRouter.sol
 
 pragma solidity >=0.6.6;
