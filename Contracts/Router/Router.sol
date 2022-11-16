@@ -9,48 +9,9 @@ pragma solidity >=0.6.0;
 // helper methods for interacting with ERC20 tokens and sending ETH that do not consistently return true/false
 import "https://github.com/crytotech/SmartContracts/blob/master/Library/common/TransferHelper.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/Router/interface/IRCrytoRouter01.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/Router/interface/IRCrytoRouter02.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/Router/Library/RCrytoLibrary.sol";
 
-
-interface IRCrytoRouter02 is IRCrytoRouter01 {
-    function removeLiquidityETHSupportingFeeOnTransferTokens(
-        address token,
-        uint liquidity,
-        uint amountTokenMin,
-        uint amountETHMin,
-        address to,
-        uint deadline
-    ) external returns (uint amountETH);
-    function removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(
-        address token,
-        uint liquidity,
-        uint amountTokenMin,
-        uint amountETHMin,
-        address to,
-        uint deadline,
-        bool approveMax, uint8 v, bytes32 r, bytes32 s
-    ) external returns (uint amountETH);
-
-    function swapExactTokensForTokensSupportingFeeOnTransferTokens(
-        uint amountIn,
-        uint amountOutMin,
-        address[] calldata path,
-        address to,
-        uint deadline
-    ) external;
-    function swapExactETHForTokensSupportingFeeOnTransferTokens(
-        uint amountOutMin,
-        address[] calldata path,
-        address to,
-        uint deadline
-    ) external payable;
-    function swapExactTokensForETHSupportingFeeOnTransferTokens(
-        uint amountIn,
-        uint amountOutMin,
-        address[] calldata path,
-        address to,
-        uint deadline
-    ) external;
-}
 interface IRCrytoFactory {
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
 
@@ -72,19 +33,6 @@ interface IRCrytoFactory {
 
 // a library for performing overflow-safe math, courtesy of DappHub (https://github.com/dapphub/ds-math)
 
-library SafeMath {
-    function add(uint x, uint y) internal pure returns (uint z) {
-        require((z = x + y) >= x, 'ds-math-add-overflow');
-    }
-
-    function sub(uint x, uint y) internal pure returns (uint z) {
-        require((z = x - y) <= x, 'ds-math-sub-underflow');
-    }
-
-    function mul(uint x, uint y) internal pure returns (uint z) {
-        require(y == 0 || (z = x * y) / y == x, 'ds-math-mul-overflow');
-    }
-}
 
 interface IRCrytoPair {
     event Approval(address indexed owner, address indexed spender, uint value);
