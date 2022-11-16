@@ -3,50 +3,19 @@ pragma solidity >=0.6.2;
 
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/libraries/TransferHelper.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IRCrytoRouter01.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IRCrytoRouter02.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IRCrytoFactory.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/libraries/SafeMath.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IRCrytoPair.sol";
 import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/libraries/RCrytoLibrary.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IERC20.sol";
+import "https://github.com/crytotech/SmartContracts/blob/master/Contracts/lib/contracts/interfaces/IWETH.sol";
 
 
-// File: contracts\interfaces\IERC20.sol
-
-pragma solidity >=0.5.0;
-
-interface IERC20 {
-    event Approval(address indexed owner, address indexed spender, uint value);
-    event Transfer(address indexed from, address indexed to, uint value);
-
-    function name() external view returns (string memory);
-    function symbol() external view returns (string memory);
-    function decimals() external view returns (uint8);
-    function totalSupply() external view returns (uint);
-    function balanceOf(address owner) external view returns (uint);
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint value) external returns (bool);
-    function transfer(address to, uint value) external returns (bool);
-    function transferFrom(address from, address to, uint value) external returns (bool);
-}
-
-// File: contracts\interfaces\IWETH.sol
-
-pragma solidity >=0.5.0;
-
-interface IWETH {
-    function deposit() external payable;
-    function transfer(address to, uint value) external returns (bool);
-    function withdraw(uint) external;
-}
 
 // File: contracts\RCrytoRouter.sol
 
-pragma solidity =0.6.6;
-
-
-
-
-
+pragma solidity >=0.6.6;
 
 
 contract RCrytoRouter is IRCrytoRouter02 {
